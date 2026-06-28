@@ -1,0 +1,23 @@
+[project]
+name = "msc-mcp-core"
+version = "0.1.0"
+description = "Código compartilhado da família de MCPs da MSC Company"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.2.0",
+    "huggingface_hub>=0.25.0",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+msc-mcp-core = "mcp_server:main"
+
+[tool.setuptools]
+py-modules = ["mcp_server"]
+packages = ["connectors"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
